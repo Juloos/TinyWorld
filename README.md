@@ -25,6 +25,8 @@ It gives the illusion that everything is normal. This can be used for adventure 
 ## TODO:
 ### Bugs
 - Custom block collisions aren't removed when the resource pack no longer has them...
+- Dropping items while scaled down to 1/16th causes items to randomly launch into the air
+- Being scaled down to 1/16th and on top of a shulker box while opening it makes you fall down inside it 
 ### Scaling
 - View bobbing doesn't scale [MC-267368](https://bugs.mojang.com/browse/MC-267368)
 - Nametags don't get scaled [MC-267599](https://bugs.mojang.com/browse/MC-267599)*
@@ -34,6 +36,28 @@ It gives the illusion that everything is normal. This can be used for adventure 
 - Sneaking no longer works [MC-268917](https://bugs.mojang.com/browse/MC-268917)*
 
 `*`: Mojang being stupid.
+
+### Features
+- The slowdown of webs inversely scales with the player scale
+- Leaves are not colliding with players that are scaled down to 1/8th or smaller
+- Small dripleaves collide with players that are scaled down to 1/8th or smaller
+- Big dripleaves do not fold when players that are on top of them are scale down to 1/8th or smaller 
+- Plants, crops and flowers slow down players that are scaled down to 1/8th or smaller
+- Some non-herbivore mobs will try to eat players that are scaled down to 1/8th or smaller
+- Correct the collision shape of some blocks
+  - Fences, Walls & Fence gates
+  - Buttons
+  - Signs & Hanging signs
+  - Candles, sea pickles & turle eggs
+  - End rods & Lightning rods
+  - Fire camps
+  - Brewing stands
+  - Bells
+  - Dragon heads & Dragon eggs
+  - Lecterns
+  - Flower pots
+  - Chorus plants & Chorus flowers
+  - Iron bars, Doors and Trapdoors ? (See if possible)
 
 ---
 ## Tiny World Creation
