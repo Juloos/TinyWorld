@@ -42,13 +42,13 @@ public abstract class BlockModelMixin implements BlockModelBridge {
     @Inject(
             method = "bake(Lnet/minecraft/client/resources/model/ModelBaker;" +
                     "Lnet/minecraft/client/renderer/block/model/BlockModel;Ljava/util/function/Function;" +
-                    "Lnet/minecraft/client/resources/model/ModelState;Lnet/minecraft/resources/ResourceLocation;Z)" +
+                    "Lnet/minecraft/client/resources/model/ModelState;Z)" +
                     "Lnet/minecraft/client/resources/model/BakedModel;",
             at = @At("RETURN")
     )
     private void tiny$onBake(ModelBaker modelBaker, BlockModel blockModel,
                              Function<Material, TextureAtlasSprite> function, ModelState modelState,
-                             ResourceLocation resourceLocation, boolean bl, CallbackInfoReturnable<BakedModel> cir) {
+                             boolean bl, CallbackInfoReturnable<BakedModel> cir) {
         if (tiny$useCustomCollisionShape()) {
             List<BlockElement> modelElementList = this.getElements();
             if (modelElementList != null && !modelElementList.isEmpty()) {

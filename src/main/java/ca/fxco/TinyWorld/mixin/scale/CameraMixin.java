@@ -15,7 +15,7 @@ public class CameraMixin {
                     floatValue = 0.1F
             )
     )
-    private float tiny$scaleCameraRays(float constant, @Local(ordinal = 0, argsOnly = true) double d) {
+    private float tiny$scaleCameraRays(float constant, @Local(ordinal = 0, argsOnly = true) float d) {
         return (float) (0.025 * d); // d / 4 = scale, 0.1 * scale, simplifies to 0.025 * d
     }
 }
