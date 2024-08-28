@@ -14,6 +14,9 @@ Cause let's be honest here. The current system is pretty bad and just "cool" to 
 - Fixes camera scales closer to walls when small [MC-268648](https://bugs.mojang.com/browse/MC-268648)
 ### Collision
 - Adds support for Block collision shape overriding (Using the model shape as the collision shape)
+- Corrects the collision shape of some blocks:
+  - Fences, Walls & Fence gates
+  - Buttons
 
 So why these changes?  
 well, with these changes, you are able to make block models that are the size of a chunk section. 
@@ -44,11 +47,9 @@ It gives the illusion that everything is normal. This can be used for adventure 
 - Big dripleaves do not fold when players that are on top of them are scale down to 1/8th or smaller 
 - Plants, crops and flowers slow down players that are scaled down to 1/8th or smaller
 - Some non-herbivore mobs will try to eat players that are scaled down to 1/8th or smaller
-- Correct the collision shape of some blocks
-  - Fences, Walls & Fence gates
-  - Buttons
+- Correct the collision shape of some blocks:
   - Signs & Hanging signs
-  - Candles, sea pickles & turle eggs
+  - Candles, Sea pickles & turtle eggs
   - End rods & Lightning rods
   - Fire camps
   - Brewing stands
