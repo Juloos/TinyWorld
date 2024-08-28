@@ -4,6 +4,8 @@ import ca.fxco.TinyWorld.bridge.BakedModelBridge;
 import ca.fxco.TinyWorld.bridge.BlockBehaviourBridge;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -14,11 +16,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-import static ca.fxco.TinyWorld.TinyWorld.BLOCK_RENDERER;
+import static ca.fxco.TinyWorld.TinyWorldClient.BLOCK_RENDERER;
 
 @Mixin(targets = "net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache")
 public class CacheMixin {
 
+    @Environment(EnvType.CLIENT)
     @WrapOperation(
             method = "<init>",
             at = @At(

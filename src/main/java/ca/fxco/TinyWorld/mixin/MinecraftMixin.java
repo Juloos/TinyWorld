@@ -1,6 +1,8 @@
 package ca.fxco.TinyWorld.mixin;
 
-import ca.fxco.TinyWorld.TinyWorld;
+import ca.fxco.TinyWorld.TinyWorldClient;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.main.GameConfig;
@@ -22,6 +24,7 @@ public class MinecraftMixin {
 
     @Shadow @Final private ReloadableResourceManager resourceManager;
 
+    @Environment(EnvType.CLIENT)
     @Inject(
             method = "<init>",
             at = @At(
@@ -31,7 +34,7 @@ public class MinecraftMixin {
             )
     )
     private void tiny$getBlockRenderDispatcherInstance(GameConfig gameConfig, CallbackInfo ci) {
-        TinyWorld.BLOCK_RENDERER = this.blockRenderer;
+        TinyWorldClient.BLOCK_RENDERER = this.blockRenderer;
 
         // MoreCulling already registers `Blocks.rebuildCache()` in the reload listener, so don't do it twice.
         if (FabricLoader.getInstance().isModLoaded("moreculling")) {

@@ -1,31 +1,31 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "ca.fxco.TinyWorld.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "BlocksMixin",
-    "collision.BlockBehaviourMixin",
-    "collision.CacheMixin",
-    "scale.LivingEntityMixin",
-    "scale.PlayerMixin"
-  ],
-  "client": [
-    "MinecraftMixin",
-    "collision.json.BlockModelMixin",
-    "collision.json.DeserializerMixin",
-    "collision.models.BakedModelMixin",
-    "collision.models.BuiltInModelMixin",
-    "collision.models.ForwardingBakedModelMixin",
-    "collision.models.MultiPartBakedModelMixin",
-    "collision.models.SimpleBakedModelMixin",
-    "collision.models.WeightedBakedModelMixin",
-    "scale.AbstractClientPlayerMixin",
-    "scale.CameraMixin",
-    "scale.GameRendererMixin",
-    "scale.HumanoidModelMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+    "required": true,
+    "minVersion": "0.8",
+    "package": "ca.fxco.TinyWorld.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "BlocksMixin",
+        "collision.BlockBehaviourMixin",
+        "collision.CacheMixin",
+        "scale.LivingEntityMixin",
+        "scale.PlayerMixin"
+    ],
+    "client": [
+        "MinecraftMixin",
+        "collision.json.BlockModelMixin",
+        "collision.json.DeserializerMixin",
+        "collision.models.BakedModelMixin",
+        "collision.models.BuiltInModelMixin",
+        "collision.models.ForwardingBakedModelMixin",
+        "collision.models.MultiPartBakedModelMixin",
+        "collision.models.SimpleBakedModelMixin",
+        "collision.models.WeightedBakedModelMixin",
+        "scale.AbstractClientPlayerMixin",
+        "scale.CameraMixin",
+        "scale.GameRendererMixin",
+        "scale.HumanoidModelMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
 }
