@@ -25,6 +25,7 @@
   "mixins": [
     "tiny_world.mixins.json"
   ],
+  "accessWidener" : "tiny_world.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
