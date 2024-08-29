@@ -19,7 +19,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(StandingSignBlock.class)
 public abstract class StandingSignBlockMixin extends BaseEntityBlock {
-
     @Shadow @Final public static IntegerProperty ROTATION;
     @Unique private static final VoxelShape[] SHAPES = new VoxelShape[16];
 

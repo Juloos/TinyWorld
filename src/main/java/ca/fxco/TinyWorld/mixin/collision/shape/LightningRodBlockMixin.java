@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(LightningRodBlock.class)
 public class LightningRodBlockMixin extends RodBlock {
-
     @Unique
     private static final VoxelShape NORTH_SHAPE;
     @Unique

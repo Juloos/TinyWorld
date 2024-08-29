@@ -18,6 +18,7 @@ import static net.minecraft.world.level.block.FenceGateBlock.*;
 
 @Mixin(FenceGateBlock.class)
 public class FenceGateBlockMixin extends HorizontalDirectionalBlock {
+    @Unique private static final VoxelShape[] staticShapesByIndex = new VoxelShape[16];
 
     public FenceGateBlockMixin(Properties properties) {
         super(properties);
@@ -28,7 +29,19 @@ public class FenceGateBlockMixin extends HorizontalDirectionalBlock {
         return null;
     }
 
-    @Unique private static final VoxelShape[] staticShapesByIndex = new VoxelShape[16];
+    @Override
+    public VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return getShape(blockState, blockGetter, blockPos, collisionContext);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        int i = (blockState.getValue(FACING).getAxis() == Direction.Axis.X) ? 1 : 0;
+        i += (blockState.getValue(IN_WALL)) ? 2 : 0;
+        i += (blockState.getValue(OPEN)) ? 4 : 0;
+        i += (blockState.getValue(OPEN) && blockState.getValue(FACING).getAxisDirection() == Direction.AxisDirection.POSITIVE) ? 8 : 0;
+        return staticShapesByIndex[i];
+    }
 
     static {
         VoxelShape northGateWindShape = Shapes.or(
@@ -61,19 +74,5 @@ public class FenceGateBlockMixin extends HorizontalDirectionalBlock {
         staticShapesByIndex[13] = Shapes.or(northGateWindShape.move(7 / 16d, 0, -7 / 16d), northGateWindShape.move(7 / 16d, 0, 7 / 16d));  // East
         staticShapesByIndex[14] = staticShapesByIndex[12].move(0, -3 / 16d, 0);  // South + low
         staticShapesByIndex[15] = staticShapesByIndex[13].move(0, -3 / 16d, 0);  // East + low
-    }
-
-    @Override
-    public VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        return getShape(blockState, blockGetter, blockPos, collisionContext);
-    }
-
-    @Override
-    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        int i = (blockState.getValue(FACING).getAxis() == Direction.Axis.X) ? 1 : 0;
-        i += (blockState.getValue(IN_WALL)) ? 2 : 0;
-        i += (blockState.getValue(OPEN)) ? 4 : 0;
-        i += (blockState.getValue(OPEN) && blockState.getValue(FACING).getAxisDirection() == Direction.AxisDirection.POSITIVE) ? 8 : 0;
-        return staticShapesByIndex[i];
     }
 }

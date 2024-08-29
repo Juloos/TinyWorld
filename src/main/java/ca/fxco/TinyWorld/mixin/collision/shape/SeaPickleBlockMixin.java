@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.*;
 
 @Mixin(SeaPickleBlock.class)
 public class SeaPickleBlockMixin extends BushBlock {
-
     @Shadow @Final protected static VoxelShape ONE_AABB;
     @Unique private static final VoxelShape[] AABBS = new VoxelShape[16];
 

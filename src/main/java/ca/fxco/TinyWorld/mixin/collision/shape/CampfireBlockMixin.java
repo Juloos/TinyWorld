@@ -16,7 +16,6 @@ import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(CampfireBlock.class)
 public class CampfireBlockMixin extends BaseEntityBlock {
-
     @Unique private static final VoxelShape Z_SHAPE;
     @Unique private static final VoxelShape X_SHAPE;
 

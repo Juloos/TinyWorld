@@ -19,7 +19,6 @@ import java.util.Map;
 
 @Mixin(WallSignBlock.class)
 public abstract class WallSignBlockMixin extends SignBlock {
-
     @Mutable @Shadow @Final public static Map<Direction, VoxelShape> AABBS;
 
     public WallSignBlockMixin(WoodType woodType, Properties properties) {

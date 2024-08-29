@@ -22,6 +22,7 @@ Cause let's be honest here. The current system is pretty bad and just "cool" to 
   - End rods & Lightning rods
   - Campfires
   - Brewing stands
+  - Bells
 
 So why these changes?  
 well, with these changes, you are able to make block models that are the size of a chunk section. 
@@ -53,7 +54,6 @@ It gives the illusion that everything is normal. This can be used for adventure 
 - Plants, crops and flowers slow down players that are scaled down to 1/8th or smaller
 - Some non-herbivore mobs will try to eat players that are scaled down to 1/8th or smaller
 - Correct the collision shape of some blocks:
-  - Bells
   - Dragon heads & Dragon eggs
   - Lecterns
   - Flower pots

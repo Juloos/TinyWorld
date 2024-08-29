@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(TurtleEggBlock.class)
 public class TurtleEggBlockMixin extends Block {
-
     @Unique private static final VoxelShape[] AABBS = new VoxelShape[16];
 
     public TurtleEggBlockMixin(Properties properties) {
