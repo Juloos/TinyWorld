@@ -43,8 +43,8 @@ public abstract class StandingSignBlockMixin extends BaseEntityBlock {
     static {
         double angle = Math.PI / 8d;
         double ss1 = 2 / 3d;  // Sign scale
-        double ss2 = ss1 * (1 + Math.sin(1 * angle));
-        double ss3 = ss1 * (1 + Math.sin(2 * angle));
+        double ss2 = ss1 * Math.sin(3 * angle) / Math.sin(2 * angle);
+        double ss3 = ss1 * Math.sin(4 * angle) / Math.sin(2 * angle);
 
         VoxelShape postShape1 = box(8 - ss1, 0, 8 - ss1, 8 + ss1, 12 * ss1, 8 + ss1);
         VoxelShape postShape2 = box(8 - ss2, 0, 8 - ss2, 8 + ss2, 12 * ss1, 8 + ss2);

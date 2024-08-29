@@ -50,17 +50,17 @@ public class FenceGateBlockMixin extends HorizontalDirectionalBlock {
 
         staticShapesByIndex[0] = Shapes.or(northGateWindShape, southGateWindShape);  // Z
         staticShapesByIndex[1] = Shapes.or(westGateWindShape, eastGateWindShape);  // X
-        staticShapesByIndex[2] = staticShapesByIndex[0].move(0, -3/16d, 0);  // Z + low
-        staticShapesByIndex[3] = staticShapesByIndex[1].move(0, -3/16d, 0);  // X + low
-        staticShapesByIndex[4] = Shapes.or(eastGateWindShape.move(-7/16d, 0, -7/16d), eastGateWindShape.move(7/16d, 0, -7/16d));  // North
-        staticShapesByIndex[5] = Shapes.or(southGateWindShape.move(-7/16d, 0, -7/16d), southGateWindShape.move(-7/16d, 0, 7/16d));  // West
-        staticShapesByIndex[6] = staticShapesByIndex[4].move(0, -3/16d, 0);  // North + low
-        staticShapesByIndex[7] = staticShapesByIndex[5].move(0, -3/16d, 0);  // West + low
+        staticShapesByIndex[2] = staticShapesByIndex[0].move(0, -3 / 16d, 0);  // Z + low
+        staticShapesByIndex[3] = staticShapesByIndex[1].move(0, -3 / 16d, 0);  // X + low
+        staticShapesByIndex[4] = Shapes.or(eastGateWindShape.move(-7 / 16d, 0, -7 / 16d), eastGateWindShape.move(7 / 16d, 0, -7 / 16d));  // North
+        staticShapesByIndex[5] = Shapes.or(southGateWindShape.move(-7 / 16d, 0, -7 / 16d), southGateWindShape.move(-7 / 16d, 0, 7 / 16d));  // West
+        staticShapesByIndex[6] = staticShapesByIndex[4].move(0, -3 / 16d, 0);  // North + low
+        staticShapesByIndex[7] = staticShapesByIndex[5].move(0, -3 / 16d, 0);  // West + low
 
-        staticShapesByIndex[12] = Shapes.or(westGateWindShape.move(-7/16d, 0, 7/16d), westGateWindShape.move(7/16d, 0, 7/16d));  // South
-        staticShapesByIndex[13] = Shapes.or(northGateWindShape.move(7/16d, 0, -7/16d), northGateWindShape.move(7/16d, 0, 7/16d));  // East
-        staticShapesByIndex[14] = staticShapesByIndex[12].move(0, -3/16d, 0);  // South + low
-        staticShapesByIndex[15] = staticShapesByIndex[13].move(0, -3/16d, 0);  // East + low
+        staticShapesByIndex[12] = Shapes.or(westGateWindShape.move(-7 / 16d, 0, 7 / 16d), westGateWindShape.move(7 / 16d, 0, 7 / 16d));  // South
+        staticShapesByIndex[13] = Shapes.or(northGateWindShape.move(7 / 16d, 0, -7 / 16d), northGateWindShape.move(7 / 16d, 0, 7 / 16d));  // East
+        staticShapesByIndex[14] = staticShapesByIndex[12].move(0, -3 / 16d, 0);  // South + low
+        staticShapesByIndex[15] = staticShapesByIndex[13].move(0, -3 / 16d, 0);  // East + low
     }
 
     @Override

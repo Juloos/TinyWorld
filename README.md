@@ -18,6 +18,7 @@ Cause let's be honest here. The current system is pretty bad and just "cool" to 
   - Fences, Walls & Fence gates
   - Buttons
   - Signs & Hanging signs
+  - Candles, Sea pickles & Turtle eggs
 
 So why these changes?  
 well, with these changes, you are able to make block models that are the size of a chunk section. 
@@ -49,8 +50,6 @@ It gives the illusion that everything is normal. This can be used for adventure 
 - Plants, crops and flowers slow down players that are scaled down to 1/8th or smaller
 - Some non-herbivore mobs will try to eat players that are scaled down to 1/8th or smaller
 - Correct the collision shape of some blocks:
-  - Candles, Sea pickles & turtle eggs
-  - Cakes with candles
   - End rods & Lightning rods
   - Fire camps
   - Brewing stands
@@ -65,7 +64,7 @@ It gives the illusion that everything is normal. This can be used for adventure 
 ## Tiny World Creation
 Wait that's what this mod is about?! We only just got to it!  
 This mod comes with a tool which allows you to convert chunk sections to block models. 
-Which you can than use to shrink yourself and walk around in.  
+Which you can then use to shrink yourself and walk around in.  
 
 ### How to create tiny world
 Simply use the command `/tiny <name> <from> <to>`, where `from` & `to` are section positions. 
