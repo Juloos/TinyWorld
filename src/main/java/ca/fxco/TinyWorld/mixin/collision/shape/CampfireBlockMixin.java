@@ -1,36 +1,23 @@
 package ca.fxco.TinyWorld.mixin.collision.shape;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(CampfireBlock.class)
-public class CampfireBlockMixin extends BaseEntityBlock {
+public abstract class CampfireBlockMixin extends BaseEntityBlock {
     @Unique private static final VoxelShape Z_SHAPE;
     @Unique private static final VoxelShape X_SHAPE;
 
     public CampfireBlockMixin(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    public MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
-    }
-
-    @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return null;
     }
 
     @Override

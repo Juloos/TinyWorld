@@ -1,6 +1,5 @@
 package ca.fxco.TinyWorld.mixin.collision.shape;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.CrossCollisionBlock;
@@ -13,17 +12,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(FenceBlock.class)
-public class FenceBlockMixin extends CrossCollisionBlock {
+public abstract class FenceBlockMixin extends CrossCollisionBlock {
     @Unique private static final VoxelShape[] staticCollisionShapeByIndex;
 
     public FenceBlockMixin(float f, float g, float h, float i, float j, Properties properties) {
         super(f, g, h, i, j, properties);
     }
-
-    public MapCodec<? extends CrossCollisionBlock> codec() {
-        return null;
-    }
-
 
     // For physical collisions
     @Override

@@ -1,6 +1,5 @@
 package ca.fxco.TinyWorld.mixin.collision.shape;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -13,17 +12,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.*;
 
 @Mixin(SeaPickleBlock.class)
-public class SeaPickleBlockMixin extends BushBlock {
+public abstract class SeaPickleBlockMixin extends BushBlock {
     @Shadow @Final protected static VoxelShape ONE_AABB;
     @Unique private static final VoxelShape[] AABBS = new VoxelShape[16];
 
     public SeaPickleBlockMixin(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    public MapCodec<? extends BushBlock> codec() {
-        return null;
     }
 
     @Override

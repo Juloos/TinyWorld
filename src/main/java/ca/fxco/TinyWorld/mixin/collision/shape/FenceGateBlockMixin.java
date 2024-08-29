@@ -1,10 +1,8 @@
 package ca.fxco.TinyWorld.mixin.collision.shape;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,16 +15,11 @@ import org.spongepowered.asm.mixin.*;
 import static net.minecraft.world.level.block.FenceGateBlock.*;
 
 @Mixin(FenceGateBlock.class)
-public class FenceGateBlockMixin extends HorizontalDirectionalBlock {
+public abstract class FenceGateBlockMixin extends HorizontalDirectionalBlock {
     @Unique private static final VoxelShape[] staticShapesByIndex = new VoxelShape[16];
 
     public FenceGateBlockMixin(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    public MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
     }
 
     @Override

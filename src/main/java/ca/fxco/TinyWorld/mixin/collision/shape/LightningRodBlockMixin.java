@@ -1,6 +1,5 @@
 package ca.fxco.TinyWorld.mixin.collision.shape;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LightningRodBlock;
@@ -13,7 +12,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(LightningRodBlock.class)
-public class LightningRodBlockMixin extends RodBlock {
+public abstract class LightningRodBlockMixin extends RodBlock {
     @Unique
     private static final VoxelShape NORTH_SHAPE;
     @Unique
@@ -29,11 +28,6 @@ public class LightningRodBlockMixin extends RodBlock {
 
     public LightningRodBlockMixin(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    public MapCodec<? extends RodBlock> codec() {
-        return null;
     }
 
     @Override
