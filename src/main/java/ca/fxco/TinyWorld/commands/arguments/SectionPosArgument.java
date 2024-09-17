@@ -15,7 +15,9 @@ import net.minecraft.commands.Commands;
 import net.minecraft.core.SectionPos;
 import net.minecraft.network.chat.Component;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 

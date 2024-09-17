@@ -5,7 +5,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.BambooStalkBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BambooLeaves;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;

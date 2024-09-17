@@ -10,9 +10,11 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.spongepowered.asm.mixin.*;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 
-import static net.minecraft.world.level.block.FenceGateBlock.*;
+import static net.minecraft.world.level.block.FenceGateBlock.IN_WALL;
+import static net.minecraft.world.level.block.FenceGateBlock.OPEN;
 
 @Mixin(FenceGateBlock.class)
 public abstract class FenceGateBlockMixin extends HorizontalDirectionalBlock {

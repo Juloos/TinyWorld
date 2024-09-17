@@ -25,6 +25,7 @@ Cause let's be honest here. The current system is pretty bad and just "cool" to 
   - Bells
   - Dragon eggs
   - Flower pots (with and without plants)
+  - Chorus plants & Chorus flowers
   - Bamboo
 
 So why these changes?  
@@ -42,7 +43,7 @@ It gives the illusion that everything is normal. This can be used for adventure 
 ### Scaling
 - View bobbing doesn't scale [MC-267368](https://bugs.mojang.com/browse/MC-267368)
 - Nametags don't get scaled [MC-267599](https://bugs.mojang.com/browse/MC-267599)*
-- Fix particles created by scaled entities not being scaled. ([eating](https://bugs.mojang.com/browse/MC-270594), terrain, potions, etc[.](https://bugs.mojang.com/browse/MC-270878)[.](https://bugs.mojang.com/browse/MC-270942)[.](https://bugs.mojang.com/browse/MC-270801))
+- (Sprint particles done) Fix particles created by scaled entities not being scaled. ([eating](https://bugs.mojang.com/browse/MC-270594), terrain, potions, etc[.](https://bugs.mojang.com/browse/MC-270878)[.](https://bugs.mojang.com/browse/MC-270942)[.](https://bugs.mojang.com/browse/MC-270801))
 ### Scaling Up
 - Actions sounds not working correctly [MC-270592](https://bugs.mojang.com/browse/MC-270592)
 - Sneaking no longer works [MC-268917](https://bugs.mojang.com/browse/MC-268917)*
@@ -58,7 +59,8 @@ It gives the illusion that everything is normal. This can be used for adventure 
 - Some non-herbivore mobs will try to eat players that are scaled down to 1/8th or smaller
 - Correct the collision shape of some blocks:
   - Lecterns
-  - Chorus plants & Chorus flowers
+  - Banners
+  - Torches, Levers
   - Skulls
   - Iron bars, Doors and Trapdoors ? (See if possible)
 

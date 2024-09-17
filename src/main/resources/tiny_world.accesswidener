@@ -1,3 +1,6 @@
 accessWidener v2 named
 
 mutable field net/minecraft/world/level/block/state/BlockBehaviour hasCollision Z
+accessible field net/minecraft/client/particle/Particle xd D
+accessible field net/minecraft/client/particle/Particle yd D
+accessible field net/minecraft/client/particle/Particle zd D

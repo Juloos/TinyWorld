@@ -15,6 +15,8 @@
         "collision.shape.CampfireBlockMixin",
         "collision.shape.CandleBlockMixin",
         "collision.shape.CeilingHangingSignBlockMixin",
+        "collision.shape.ChorusFlowerBlockMixin",
+        "collision.shape.ChorusPlantBlockMixin",
         "collision.shape.DragonEggBlockMixin",
         "collision.shape.EndRodBlockMixin",
         "collision.shape.FenceBlockMixin",
@@ -27,8 +29,11 @@
         "collision.shape.WallBlockMixin",
         "collision.shape.WallHangingSignBlockMixin",
         "collision.shape.WallSignBlockMixin",
+        "scale.BlockParticleOptionMixin",
+        "scale.EntityMixin",
         "scale.LivingEntityMixin",
-        "scale.PlayerMixin"
+        "scale.PlayerMixin",
+        "scale.TerrainParticleMixin"
     ],
     "client": [
         "MinecraftMixin",
