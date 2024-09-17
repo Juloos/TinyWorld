@@ -54,29 +54,4 @@ public abstract class EntityMixin {
             return e;
         return e * Objects.requireNonNull(((LivingEntity) (Object) this).getAttribute(Attributes.SCALE)).getValue();
     }
-
-//    @Inject(
-//            method = "moveRelative",
-//            at = @At("HEAD")
-//    )
-//    private void tiny$moveRelative1(float f, Vec3 vec3, CallbackInfo ci) {
-//        System.out.print(getDeltaMovement() + " -> ");
-//    }
-//
-//    @Inject(
-//            method = "moveRelative",
-//            at = @At("RETURN")
-//    )
-//    private void tiny$moveRelative2(float f, Vec3 vec3, CallbackInfo ci) {
-//        System.out.print(getDeltaMovement() + "\n");
-//    }
-
-//    @Inject(
-//            method = "setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V",
-//            at = @At("HEAD")
-//    )
-//    private void test(Vec3 vec3, CallbackInfo ci) {
-//        if (vec3.x == 0 && Math.abs(vec3.z) > 0)
-//            Thread.dumpStack();
-//    }
 }
