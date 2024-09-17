@@ -5,20 +5,29 @@ import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.ModifyConstant;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Objects;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
     @Shadow public abstract boolean isAlive();
+
+    @Shadow public abstract Vec3 getDeltaMovement();
+
+    @Shadow protected abstract float getBlockSpeedFactor();
+
+    @Shadow public abstract double getX();
+
+    @Shadow public abstract double getZ();
 
     @Redirect(
             method = "spawnSprintParticle",
@@ -46,13 +55,28 @@ public abstract class EntityMixin {
         return e * Objects.requireNonNull(((LivingEntity) (Object) this).getAttribute(Attributes.SCALE)).getValue();
     }
 
-//    @ModifyConstant(
-//            method = "spawnSprintParticle",
-//            constant = @Constant(doubleValue = 1.5)
+//    @Inject(
+//            method = "moveRelative",
+//            at = @At("HEAD")
 //    )
-//    private double tiny$modifyParticleScaleH(double h) {
-//        if (!isAlive())
-//            return h;
-//        return h * Objects.requireNonNull(((LivingEntity) (Object) this).getAttribute(Attributes.SCALE)).getValue();
+//    private void tiny$moveRelative1(float f, Vec3 vec3, CallbackInfo ci) {
+//        System.out.print(getDeltaMovement() + " -> ");
+//    }
+//
+//    @Inject(
+//            method = "moveRelative",
+//            at = @At("RETURN")
+//    )
+//    private void tiny$moveRelative2(float f, Vec3 vec3, CallbackInfo ci) {
+//        System.out.print(getDeltaMovement() + "\n");
+//    }
+
+//    @Inject(
+//            method = "setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V",
+//            at = @At("HEAD")
+//    )
+//    private void test(Vec3 vec3, CallbackInfo ci) {
+//        if (vec3.x == 0 && Math.abs(vec3.z) > 0)
+//            Thread.dumpStack();
 //    }
 }

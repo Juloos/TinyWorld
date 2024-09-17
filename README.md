@@ -12,6 +12,7 @@ Cause let's be honest here. The current system is pretty bad and just "cool" to 
 - Fixes multiple animations not scaling correctly (walking, flying)
 - Fixes the fov being too small, when you scale the movement speed with the scale.
 - Fixes camera scales closer to walls when small [MC-268648](https://bugs.mojang.com/browse/MC-268648)
+- Fixes movement direction snapping to the closest axis direction when low speed [MC-184530](https://bugs.mojang.com/browse/MC-184530)
 ### Collision
 - Adds support for Block collision shape overriding (Using the model shape as the collision shape)
 - Corrects the collision shape of some blocks:
@@ -54,15 +55,16 @@ It gives the illusion that everything is normal. This can be used for adventure 
 - The slowdown of webs inversely scales with the player scale
 - Leaves are not colliding with players that are scaled down to 1/8th or smaller
 - Small dripleaves collide with players that are scaled down to 1/8th or smaller
-- Big dripleaves do not fold when players that are on top of them are scale down to 1/8th or smaller 
+- Big dripleaves do not fold when players that are on top of them are scale down to 1/8th or smaller
 - Plants, crops and flowers slow down players that are scaled down to 1/8th or smaller
 - Some non-herbivore mobs will try to eat players that are scaled down to 1/8th or smaller
-- Correct the collision shape of some blocks:
+- Fire sources will damage the player depending on its scale (lit candles, torches, campfires...)
+- Correct the collision shape of some blocks (if possible):
   - Lecterns
   - Banners
-  - Torches, Levers
+  - Torches and Levers
   - Skulls
-  - Iron bars, Doors and Trapdoors ? (See if possible)
+  - Iron bars, Doors and Trapdoors
 
 ---
 ## Tiny World Creation
